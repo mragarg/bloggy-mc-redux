@@ -18,8 +18,12 @@ export default function posts(state={}, action={type: ''}) {
             // console.log(`Sounds like you wanna create a post`);
             const newState = {
                 ...state,
-                // 1003: action.payload
+                // To use a variable as a key in an object literal, you must use brackets
+                [id]: action.payload
             }
+            // To get the equivalent result, you
+            // can use the familiar assignment syntax:
+            // newState[id] = action.payload;
             return newState;
             break;
         default:
