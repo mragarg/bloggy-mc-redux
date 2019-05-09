@@ -4,6 +4,7 @@ import {
 } from 'redux';
 
 import posts from './reducers/posts';
+import selectedid from './reducers/selectedid';
 
 const FREQUENCY = 2000;
 const LS_KEY = 'bloddy-mc-redux';
@@ -12,7 +13,8 @@ const LS_KEY = 'bloddy-mc-redux';
 // Pass an object to combineReducers.
 // This object should be 'shaped' like your state.
 const rootReducer = combineReducers({
-    posts
+    posts,
+    selectedid
 });
 
 // check localStorage for any previously saved app state
