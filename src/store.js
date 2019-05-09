@@ -7,7 +7,7 @@ import posts from './reducers/posts';
 import selectedid from './reducers/selectedid';
 
 const FREQUENCY = 2000;
-const LS_KEY = 'bloddy-mc-redux';
+const LS_KEY = 'bloggy-mc-redux';
 
 
 // Pass an object to combineReducers.
@@ -27,7 +27,7 @@ const store = createStore(
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     );
 
-let saveInterval = setInterval(() => {
+setInterval(() => {
     const state = store.getState();
     localStorage.setItem(LS_KEY, JSON.stringify(state));
 }, FREQUENCY);
