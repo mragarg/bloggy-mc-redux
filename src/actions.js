@@ -28,8 +28,18 @@ export function deletePost(id) {
     }
 }
 
-export function updatePost() {
+window.deletePost = deletePost;
 
+export function updatePost(id, payload) {
+    return {
+        type: ACTION_UPDATE_POST,
+        payload: {
+            id,
+            ...payload
+        }
+    }
 }
+
+window.updatePost = updatePost;
 
 
