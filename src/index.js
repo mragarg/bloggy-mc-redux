@@ -6,6 +6,13 @@ import * as serviceWorker from './serviceWorker';
 
 import store from './store';
 window.store = store;
+const FREQUENCY = 2000;
+const LS_KEY = 'bloddy-mc-redux'
+
+let saveInterval = setInterval(() => {
+    const state = store.getState();
+    localStorage.setItem(LS_KEY, JSON.stringify(state));
+}, FREQUENCY);
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
